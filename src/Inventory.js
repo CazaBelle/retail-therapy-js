@@ -9,15 +9,10 @@ class Inventory{
    return this.products
   }
 
-  // inventoryText(){
-  //   return this.products.map(function(product){
-  //     `Name: ${console.log(product.name)} Category: ${console.log(product.category)} Price: ${console.log(product.price)} Availbility: ${console.log(product.quantity)}`
-  //   })
-  // }
 
   inventoryText(){
     return this.products.map(function(product){
-        return `Name: ${product.name} Price: ${parseFloat(product.price).toFixed(2)} Availbility: ${product.quantity} <button  id=${product.id}>Add To Cart</button>`
+        return `Name: ${product.name} Price: ${parseFloat(product.price).toFixed(2)} Availbility: <span class="product-quantity-${product.id}">${product.quantity}</span> <button class="add-to-cart" id=${product.id}>Add To Cart</button>`
     })
 }
   
@@ -30,9 +25,14 @@ class Inventory{
       ul.appendChild(li)
     })
     return ul
-}
-  
- 
+  }
 
+  
+  decrease(id){
+    this.products.find(function(product){
+        if(product.id === id){
+            product.quantity -=1
+        }
+    })
 }
- 
+}
