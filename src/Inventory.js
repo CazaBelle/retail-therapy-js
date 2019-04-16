@@ -27,7 +27,6 @@ class Inventory{
     return ul
   }
 
-  
   decrease(id){
     this.products.find(function(product){
         if(product.id === id){

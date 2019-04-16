@@ -4,7 +4,6 @@ class Cart {
   }
 
   countCartItems(){
-    console.log(this.items.length)
     return this.items.length
   }
 
