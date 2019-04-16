@@ -1,11 +1,11 @@
 
 const loadPage = () => {
-  let products = document.getElementById('product-list')
-  let cart = document.querySelector('.cart-section')
+  let productDOM = document.querySelector('#product-list')
+  let cartDOM = document.querySelector('.cart-section')
   const inventory = new Inventory(data)
-  console.log(products)
-  products.innerHTML = ''
-  products.appendChild(inventory.addInventoryDOM())
+  const cart = new Cart()
+  productDOM.innerHTML = ''
+  productDOM.appendChild(inventory.addInventoryDOM())
   let cartButton = document.querySelectorAll('.add-to-cart')
 
   
@@ -21,13 +21,9 @@ const loadPage = () => {
   for(i=0; i<cartButton.length; i++){
     cartButton[i].addEventListener('click', function(){
       let quantity = document.querySelector(`.product-quantity-${this.id}`)
-      console.log(cartButton[0])
-      console.log(quantity)
-     
-   
-     
-
-       
+      quantity.innerHTML = quantity.innerHTML - 1
+      console.log(this.id)
+      cart.addCartItem(this.id)
     })
   }
 }

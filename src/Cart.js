@@ -7,14 +7,27 @@ class Cart {
     return this.items.length
   }
 
-  addCartItem(id){
-      let cartItems = data.find(function(product){
-          if(product.id === id){
-              return product
-          }
-      })
-      cartItems.quantity = 1
-      this.items.push(cartItems)
+
+  checkId(element, id){
+    
+   if(element.id == id){
+      element.quantity = 1
+      this.items.push(element)
+      console.log(this.items)
+   }
   
-  }
 }
+  
+  addCartItem(id){
+   data.forEach(element => {
+       this.checkId(element, id)
+    })
+
+  }
+      
+     
+      
+    
+  }
+
+
