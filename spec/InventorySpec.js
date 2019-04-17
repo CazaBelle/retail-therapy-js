@@ -18,8 +18,9 @@ describe ( `Inventory`, () => {
     let item =[{ id: 1, name: "testshow", price: 50, quantity: 4 }]
     let inventory = new Inventory(item)
     inventory.decrease(1)
-
     expect(inventory.getProducts()[0].quantity).toEqual(3)
   })
+
+  
 
 })

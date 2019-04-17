@@ -24,6 +24,22 @@ class Cart {
     })
 
   }
+
+  cartText(){
+    return this.items.map(function(element){
+      return `Name: ${element.name} Price: ${parseFloat(element.price).toFixed(2)} <button class="remove-from-cart" id=${element.id}>Remove</button>`
+    })
+  }
+
+  displayCartDOM(){
+    let ul = document.createElement('ul')
+    this.cartText().map(function(text){
+      let li = document.createElement('li')
+      li.innerHTML = text
+      ul.appendChild(li)
+    })
+    return ul
+  }
       
      
       

@@ -29,9 +29,9 @@ class Inventory{
 
   decrease(id){
     this.products.find(function(product){
-        if(product.id === id){
+        if(product.id == id){
             product.quantity -=1
-            console.log(product.quantity)
+
         }
     })
 }

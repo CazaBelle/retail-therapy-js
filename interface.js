@@ -9,23 +9,17 @@ const loadPage = () => {
   let cartButton = document.querySelectorAll('.add-to-cart')
 
   
-  // let quantity = document.getElementsByClassName("product-quantity"
-  // quantity.array.forEach(element => {
-  //   return element.innerHTML
-  // });
-     // let quantity = document.getElementsByClassName(`product-quantity-${this.id}`)
-      //   quantity.forEach(element => {
-      //     return element.innerHTML
-      //   })
-
   for(i=0; i<cartButton.length; i++){
     cartButton[i].addEventListener('click', function(){
       let quantity = document.querySelector(`.product-quantity-${this.id}`)
       quantity.innerHTML = quantity.innerHTML - 1
-      console.log(this.id)
+      cartDOM.innerHTML = ''
       cart.addCartItem(this.id)
+      cartDOM.appendChild(cart.displayCartDOM())
     })
   }
+
+  
 }
 
 document.onload = loadPage()
