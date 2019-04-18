@@ -1,26 +1,22 @@
 class Cart {
-  constructor(){
-    this.items=[]
+  constructor(items){
+    this.items=items || []
   }
 
   countCartItems(){
     return this.items.length
   }
 
-
   checkId(element, id){
-    
    if(element.id == id){
       element.quantity = 1
       this.items.push(element)
-      console.log(this.items)
    }
   
 }
-  
   addCartItem(id){
    data.forEach(element => {
-       this.checkId(element, id)
+      this.checkId(element, id)
     })
 
   }
@@ -40,10 +36,27 @@ class Cart {
     })
     return ul
   }
+
+  findItemIndex(id){
+    this.items.find(function(item, index) {
+      if(item.id == id){
+        console.log(index)
+        return index
+        
+      }
       
-     
-      
-    
+    })
+ 
   }
 
+  removeCartItem(id){
+    console.log(this.index)
+    let index = this.items.forEach(element => {
+       this.findItemIndex(id)
+    })
+    this.items.splice(index, 1)  
+    console.log(this.index)
+  }
 
+    
+  }
