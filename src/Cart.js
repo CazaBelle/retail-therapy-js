@@ -37,25 +37,11 @@ class Cart {
     return ul
   }
 
-  findItemIndex(id){
-    this.items.find(function(item, index) {
-      if(item.id == id){
-        console.log(index)
-        return index
-        
-      }
-      
-    })
- 
-  }
 
   removeCartItem(id){
-    console.log(this.index)
-    let index = this.items.forEach(element => {
-       this.findItemIndex(id)
-    })
-    this.items.splice(index, 1)  
-    console.log(this.index)
+    let index = this.items.findIndex(x => x.id === id)
+    this.items.splice(index, 1)
+  
   }
 
     
