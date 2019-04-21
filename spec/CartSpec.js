@@ -28,9 +28,9 @@ describe('Cart', () => {
   })
 
   it('the right item will be removed from cart', () =>{
-    let newcart = new Cart([{ id: 1, name: "testitem1", price: 50, quantity: 4},{ id: 2, name: "testitem2", price: 50, quantity: 4}])
-    console.log(newcart)
-    cart.removeCartItem(2)
+    cart.addCartItem(1)
+    cart.addCartItem(2)
+    cart.removeCartItem(1)
     expect(cart.countCartItems()).toEqual(1)
     expect(cart.cartText()).toEqual(['Name: Suede Shoes, Blue Price: 42.00 <button class="remove-from-cart" id=2>Remove</button>'])
   })
