@@ -9,7 +9,6 @@ const loadPage = () => {
   productDOM.appendChild(inventory.addInventoryDOM())
   let cartButton = document.querySelectorAll('.add-to-cart')
 
-// setInterval(function(){ 
   //ADD TO CART 
   for(i=0; i<cartButton.length; i++){
     cartButton[i].addEventListener('click', function(){
@@ -17,7 +16,6 @@ const loadPage = () => {
       quantity.innerHTML = quantity.innerHTML - 1
       cartDOM.innerHTML = ''
       cart.addCartItem(this.id)
-      console.log(cart.displayCartDOM())
       cartDOM.appendChild(cart.displayCartDOM())
       
     })
