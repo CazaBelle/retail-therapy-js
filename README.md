@@ -25,6 +25,10 @@ cart
 As a User I am unable to Out of Stock products to the shopping cart
 ```
 
+Requirements 
+===========
+
+
 QuickStart 
 ==========
 ```
@@ -47,4 +51,28 @@ Built with
 
 Testing
 ========
-[]!(images/png)
+- I followed a strict TDD cycle with this application
+- All edge cases have been take into consideration
+![testing](images/testing.png)
+
+Demo
+======
+![]
+
+Approach
+
+Original Specifications
+========================
+You’ve been asked to develop a responsive website for a clothing retailer.
+The retailer sells six different categories of clothes:
+1. women’s footwear
+2. men’s footwear
+3. women’s casualwear
+4. men’s casualwear
+5. women’s formalwear and
+6. men’s formalwear.
+The page that you develop should display all of the available products, as well as a shopping cart to which they can be added.
+The products available are:
+
+
+
