@@ -1,10 +1,18 @@
 describe(`Voucher`, () => {
 
   it('will return a number when passed a code', () =>{
-    let voucher = new Voucher()
-    expect(voucher.checkDiscount('5off', 60)).toEqual(5)
-    expect(voucher.checkDiscount('10off50', 60)).toEqual(10)
-    expect(voucher.checkDiscount('15off75foot', 76)).toEqual(15)
+    let voucher = new Voucher('5off', 60)
+    expect(voucher.checkDiscount()).toEqual(5)
+  })
+
+    it('will return a number when passed a code', () =>{
+      let voucher = new Voucher('10off50', 60)
+      expect(voucher.checkDiscount()).toEqual(10)
+    })
+
+    it('will return a number when passed a code', () =>{
+      let voucher = new Voucher('15off75foot', 76)
+    expect(voucher.checkDiscount()).toEqual(15)
   })
 
   it('will alert the user if they input an invalid code', () =>{

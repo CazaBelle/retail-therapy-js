@@ -1,11 +1,14 @@
 class Voucher{
-
+  constructor(discount, total){
+    this.discount = discount
+    this.total = total 
+  }
   checkDiscount(discount,total){
-    if(discount == '5off'){
+    if(this.discount == '5off'){
       return 5 
-    }else if(discount == '10off50' && total > 50){
+    }else if(this.discount == '10off50' && this.total > 50){
       return 10
-    }else if(discount == '15off75foot' && total > 75){
+    }else if(this.discount == '15off75foot' && this.total > 75){
       return 15
     }else{
       alert('Invalid code please try again')

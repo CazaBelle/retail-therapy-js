@@ -49,6 +49,7 @@ const loadPage = () => {
     let voucherButton = document.getElementById('voucherButton')
     voucherButton.addEventListener('click', function(){
       let promoCode = document.getElementById('voucherInput')
+      let voucher = new Voucher(promoCode, total.add())
       
     })
 
