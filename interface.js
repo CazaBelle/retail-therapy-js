@@ -30,12 +30,12 @@ const loadPage = () => {
     let removeButton = document.getElementsByClassName('remove-from-cart')
    
 
-    if(removeButton.length > 0){
+    if(removeButton.length>0){
       for(i=0; i<removeButton.length; i++){
+        console.log(removeButton.length)
         removeButton[i].addEventListener('click', function(){
           cart.removeCartItem(this.id + 1)
           total.removeItem(this.id + 1)
-         
         })
       }
     }
