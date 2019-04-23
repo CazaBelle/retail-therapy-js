@@ -16,8 +16,13 @@ describe(`Voucher`, () => {
   })
 
   it('will alert the user if they input an invalid code', () =>{
-    let voucher = new Voucher()
-    expect(voucher.checkDiscount('cat', 100)).toEqual('Invalid code please try again')
+    let voucher = new Voucher('cat', 100)
+    expect(voucher.checkDiscount()).toEqual('Invalid code please try again')
+  })
+
+  it('will calculate the new total after discount', () =>{
+    let voucher = new Voucher('5off', 50)
+    expect(voucher.getTotal()).toEqual(45)
   })
 
   

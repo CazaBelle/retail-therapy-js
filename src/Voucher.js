@@ -3,7 +3,8 @@ class Voucher{
     this.discount = discount
     this.total = total 
   }
-  checkDiscount(discount,total){
+  
+  checkDiscount(){
     if(this.discount == '5off'){
       return 5 
     }else if(this.discount == '10off50' && this.total > 50){
@@ -15,6 +16,14 @@ class Voucher{
       return 'Invalid code please try again'
     }
       
+  }
+
+  getTotal(){
+    return this.total - this.checkDiscount()
+  }
+
+  displayTotalWithPromo(){
+    return `<h3>Total with Discount: £${parseFloat(this.getTotal()).toFixed(2)}</h3>`
   }
 
   

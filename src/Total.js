@@ -14,7 +14,6 @@ class Total {
     if(totalArray.length > 0){
       this.total = totalArray.reduce((num1,num2) => num1 + num2)
       return this.total
-    
     }else{
       return this.total
     }

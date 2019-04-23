@@ -48,10 +48,20 @@ const loadPage = () => {
     //ADD VOUCHER
     let voucherButton = document.getElementById('voucherButton')
     voucherButton.addEventListener('click', function(){
-      let promoCode = document.getElementById('voucherInput')
-      let voucher = new Voucher(promoCode, total.add())
+      let promoCode = document.getElementById('voucherInput').value
+      let currentTotal = total.add()
+      let voucher = new Voucher(promoCode, currentTotal)
+      let newTotalDOM = document.getElementById('total-after-discount')
+      newTotalDOM.innerHTML = ''
+      newTotalDOM.innerHTML = voucher.displayTotalWithPromo()
+
+
+      // totalSection.innerHTML = ((total.add()) - (voucher.checkDiscount()))
       
+      
+      // console.log(total.displayTotal()) - (voucher.checkDiscount())
     })
+    
 
   }, 400)
 
