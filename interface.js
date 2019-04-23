@@ -42,9 +42,15 @@ const loadPage = () => {
       
      
     }
-  
+    //DISPLAY TOTAL
     let totalSection = document.getElementById('total-section')
     totalSection.innerHTML = total.displayTotal()
+    //ADD VOUCHER
+    let voucherButton = document.getElementById('voucherButton')
+    voucherButton.addEventListener('click', function(){
+      let promoCode = document.getElementById('voucherInput')
+      
+    })
 
   }, 400)
 
