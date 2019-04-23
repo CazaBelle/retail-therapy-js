@@ -17,4 +17,11 @@ describe(`Total`, () => {
     total.add()
     expect(total.displayTotal()).toEqual('<h3>Total: £50.00</h3>')
   })
+
+  it('will remove a cart item', () => {
+    let cartItems = [{ id: 1, name: "testshow", price: 50, quantity: 4 }]
+    let total = new Total(cartItems)
+    total.removeItem(1)
+    expect(total.displayTotal()).toEqual('<h3>Total: £0.00</h3>')
+  })
 })

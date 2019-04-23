@@ -7,6 +7,10 @@ class Cart {
     return this.items.length
   }
 
+  getCartItems(){
+    return this.items
+  }
+
   checkId(element, id){
    if(element.id == id){
       element.quantity = 1
@@ -36,7 +40,6 @@ class Cart {
     })
     return ul
   }
-
 
   removeCartItem(id){
     let index = this.items.findIndex(x => x.id === id)

@@ -5,6 +5,7 @@ const loadPage = () => {
   let cartDOM = document.querySelector('.cart-section')
   const inventory = new Inventory(data)
   const cart = new Cart()
+ 
   productDOM.innerHTML = ''
   productDOM.appendChild(inventory.addInventoryDOM())
   let cartButton = document.querySelectorAll('.add-to-cart')
@@ -26,15 +27,24 @@ const loadPage = () => {
     cartDOM.innerHTML = ''
     cartDOM.appendChild(cart.displayCartDOM())
     let removeButton = document.getElementsByClassName('remove-from-cart')
-    
+    let total = new Total(cart.getCartItems())
+   
+  
     if(removeButton.length > 0){
-      console.log(removeButton.length)
       for(i=0; i<removeButton.length; i++){
         removeButton[i].addEventListener('click', function(){
           cart.removeCartItem(this.id + 1)
+          total.removeItem(this.id + 1)
+          
+         
         })
       }
+      
+     
     }
+  
+    let totalSection = document.getElementById('total-section')
+    totalSection.innerHTML = total.displayTotal()
 
   }, 400)
 
