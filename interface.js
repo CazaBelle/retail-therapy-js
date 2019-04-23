@@ -5,6 +5,7 @@ const loadPage = () => {
   let cartDOM = document.querySelector('.cart-section')
   const inventory = new Inventory(data)
   const cart = new Cart()
+  let total = new Total(cart.getCartItems())
  
   productDOM.innerHTML = ''
   productDOM.appendChild(inventory.addInventoryDOM())
@@ -27,21 +28,18 @@ const loadPage = () => {
     cartDOM.innerHTML = ''
     cartDOM.appendChild(cart.displayCartDOM())
     let removeButton = document.getElementsByClassName('remove-from-cart')
-    let total = new Total(cart.getCartItems())
    
-  
+
     if(removeButton.length > 0){
       for(i=0; i<removeButton.length; i++){
         removeButton[i].addEventListener('click', function(){
           cart.removeCartItem(this.id + 1)
           total.removeItem(this.id + 1)
-          
          
         })
       }
-      
-     
     }
+  
     //DISPLAY TOTAL
     let totalSection = document.getElementById('total-section')
     totalSection.innerHTML = total.displayTotal()
@@ -54,12 +52,6 @@ const loadPage = () => {
       let newTotalDOM = document.getElementById('total-after-discount')
       newTotalDOM.innerHTML = ''
       newTotalDOM.innerHTML = voucher.displayTotalWithPromo()
-
-
-      // totalSection.innerHTML = ((total.add()) - (voucher.checkDiscount()))
-      
-      
-      // console.log(total.displayTotal()) - (voucher.checkDiscount())
     })
     
 
