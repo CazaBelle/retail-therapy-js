@@ -42,7 +42,9 @@ const loadPage = () => {
   
     //DISPLAY TOTAL
     let totalSection = document.getElementById('total-section')
+    totalSection.innerHTML = ''
     totalSection.innerHTML = total.displayTotal()
+
     //ADD VOUCHER
     let voucherButton = document.getElementById('voucherButton')
     voucherButton.addEventListener('click', function(){
@@ -53,8 +55,6 @@ const loadPage = () => {
       newTotalDOM.innerHTML = ''
       newTotalDOM.innerHTML = voucher.displayTotalWithPromo()
     })
-    
-
   }, 400)
 
 
