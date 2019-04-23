@@ -5,6 +5,7 @@ const loadPage = () => {
   let cartDOM = document.querySelector('.cart-section')
   const inventory = new Inventory(data)
   const cart = new Cart()
+  let total = new Total(cart.getCartItems())
  
   productDOM.innerHTML = ''
   productDOM.appendChild(inventory.addInventoryDOM())
@@ -27,25 +28,33 @@ const loadPage = () => {
     cartDOM.innerHTML = ''
     cartDOM.appendChild(cart.displayCartDOM())
     let removeButton = document.getElementsByClassName('remove-from-cart')
-    let total = new Total(cart.getCartItems())
    
-  
-    if(removeButton.length > 0){
+
+    if(removeButton.length>0){
       for(i=0; i<removeButton.length; i++){
+        console.log(removeButton.length)
         removeButton[i].addEventListener('click', function(){
           cart.removeCartItem(this.id + 1)
           total.removeItem(this.id + 1)
-          
-         
         })
       }
-      
-     
     }
   
+    //DISPLAY TOTAL
     let totalSection = document.getElementById('total-section')
+    totalSection.innerHTML = ''
     totalSection.innerHTML = total.displayTotal()
 
+    //ADD VOUCHER
+    let voucherButton = document.getElementById('voucherButton')
+    voucherButton.addEventListener('click', function(){
+      let promoCode = document.getElementById('voucherInput').value
+      let currentTotal = total.add()
+      let voucher = new Voucher(promoCode, currentTotal)
+      let newTotalDOM = document.getElementById('total-after-discount')
+      newTotalDOM.innerHTML = ''
+      newTotalDOM.innerHTML = voucher.displayTotalWithPromo()
+    })
   }, 400)
 
 
