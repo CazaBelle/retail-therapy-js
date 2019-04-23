@@ -26,13 +26,13 @@ const loadPage = () => {
     cartDOM.innerHTML = ''
     cartDOM.appendChild(cart.displayCartDOM())
     let removeButton = document.getElementsByClassName('remove-from-cart')
+    
     if(removeButton.length > 0){
       console.log(removeButton.length)
       for(i=0; i<removeButton.length; i++){
         removeButton[i].addEventListener('click', function(){
           cart.removeCartItem(this.id + 1)
         })
-      
       }
     }
 
