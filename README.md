@@ -25,10 +25,6 @@ cart
 As a User I am unable to Out of Stock products to the shopping cart
 ```
 
-Requirements 
-===========
-
-
 QuickStart 
 ==========
 ```
@@ -52,14 +48,15 @@ Built with
 Testing
 ========
 - I followed a strict TDD cycle with this application
-- All edge cases have been take into consideration
+- All edge cases have been take into consideration: 
 ![testing](images/testing.png)
 
 Demo
 ======
-![]
+![](images/voucherdemo.png)
 
 Approach
+========
 
 Original Specifications
 ========================
@@ -72,6 +69,7 @@ The retailer sells six different categories of clothes:
 5. women’s formalwear and
 6. men’s formalwear.
 The page that you develop should display all of the available products, as well as a shopping cart to which they can be added.
+
 The products available are:
 
 
